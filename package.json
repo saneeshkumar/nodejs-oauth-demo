@@ -1,0 +1,21 @@
+{
+  "name": "node-oauth-sample",
+  "version": "1.0.0",
+  "description": "Testing OAuth with Node js and Git Hub",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "keywords": [
+    "oauth",
+    "node"
+  ],
+  "author": "Saneesh Kumar (saneeshnair@gmail.com)",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.3",
+    "express": "^4.17.1"
+  }
+}
