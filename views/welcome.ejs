@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Welcome</title>
+</head>
+
+<body>
+
+</body>
+<div id="accessToken" data-test=<%= accessToken %>></div>
+<script>
+	// Call the user info API using the fetch browser library
+	fetch('//api.github.com/user', {
+			headers: {
+				// Include the token in the Authorization header
+				Authorization: 'token ' + document.getElementById('accessToken').dataset.test
+			}
+		})
+		// Parse the response as JSON
+		.then(res => res.json())
+		.then(res => {
+			// Once we get the response (which has many fields)
+			// Documented here: https://developer.github.com/v3/users/#get-the-authenticated-user
+			// Write "Welcome <user name>" to the documents body
+			const nameNode = `Welcome, ${res.name}`
+			document.getElementById('output').innerHTML = nameNode;
+		})
+</script>
+
+<body>
+    <h1 id="output"></h1>
+</body>
+
+</html>
